@@ -1,6 +1,6 @@
 "use client";
 import Navbar from "@/components/ui/Navbar";
-import { useLevels } from "@/components/LevelsProvider";
+import { useLevels } from "@/components/providers/LevelsProvider";
 
 const ClientNavbar = () => {
   const { totalLevels } = useLevels();

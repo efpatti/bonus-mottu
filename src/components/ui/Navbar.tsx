@@ -1,7 +1,7 @@
 
 "use client"
 import Image from "next/image";
-import { ProgressIndicator } from "@/components/ProgressIndicator";
+import { ProgressIndicator } from "@/components/layout/ProgressIndicator";
 
 interface NavbarProps {
   totalLevels: number;
@@ -17,11 +17,9 @@ const Navbar: React.FC<NavbarProps> = ({ totalLevels }) => {
           <div className="flex items-center flex-shrink-0">
             <Image src="/mottu_logo.png" alt="Mottu Logo" className="h-8 w-auto" width={100} height={32} />
           </div>
-          {/* ProgressIndicator à direita (desktop) */}
           <div className="hidden sm:flex flex-1 justify-end items-center">
             <ProgressIndicator totalLevels={totalLevels} />
           </div>
-          {/* ProgressIndicator centralizado no mobile */}
           <div className="flex sm:hidden flex-1 justify-center items-center">
             <ProgressIndicator totalLevels={totalLevels} />
           </div>

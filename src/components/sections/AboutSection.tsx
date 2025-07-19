@@ -1,9 +1,23 @@
-import React from "react";
-import { config } from "@/data/config";
+/**
+ * About section for the landing page.
+ * Displays about info, benefits, and participation.
+ */
+export interface AboutData {
+  title: string;
+  subtext: string;
+}
+export interface CardItem {
+  icon: string;
+  text: string;
+}
+interface AboutSectionProps {
+  about: AboutData;
+  benefits: CardItem[];
+  participation: CardItem[];
+}
 import { Card } from "./Card";
 
-export const AboutSection = () => {
-  const { about, benefits, participation } = config.content;
+export function AboutSection({ about, benefits, participation }: AboutSectionProps) {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 w-full bg-white">
       <div className="max-w-6xl mx-auto text-center space-y-10">
@@ -18,4 +32,4 @@ export const AboutSection = () => {
       </div>
     </section>
   );
-};
+}

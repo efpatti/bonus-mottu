@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 
-import { LevelsProvider } from "@/components/LevelsProvider";
-import AppShell from "@/components/AppShell";
+import { LevelsProvider } from "@/components/providers/LevelsProvider";
+import AppShell from "@/components/layout/AppShell";
 
 export const metadata: Metadata = {
   title: "Create Next App",
