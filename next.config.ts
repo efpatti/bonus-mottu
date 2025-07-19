@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
     };
     return config;
   },
+  output: "export",
+  basePath: "/bonus-mottu",
+  images: {
+    unoptimized: true,
+  },
+
 };
 
 export default nextConfig;

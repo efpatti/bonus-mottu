@@ -1,17 +1,20 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import { HeroSection } from "@/components/sections/HeroSection";
 import { config } from "@/data/config";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { EligibilitySection } from "@/components/sections/EligibilitySection";
-import { RulesSection } from "@/components/sections/RulesSection";
-import RedirectSection from "@/components/sections/RedirectSection";
-import Vehicle from "../../../Vehicle";
+import dynamic from "next/dynamic";
 
 import { useLevelStore } from "@/hooks/useLevelStore";
 
 function getLevels(setLevel: (level: number) => void) {
+  // Importar componentes dinamicamente para evitar execução de hooks durante o build das páginas de erro
+  const HeroSection = dynamic(() => import("@/components/sections/HeroSection").then(mod => mod.HeroSection), { ssr: false });
+  const AboutSection = dynamic(() => import("@/components/sections/AboutSection").then(mod => mod.AboutSection), { ssr: false });
+  const EligibilitySection = dynamic(() => import("@/components/sections/EligibilitySection").then(mod => mod.EligibilitySection), { ssr: false });
+  const RulesSection = dynamic(() => import("@/components/sections/RulesSection").then(mod => mod.RulesSection), { ssr: false });
+  const RedirectSection = dynamic(() => import("@/components/sections/RedirectSection"), { ssr: false });
+  const Vehicle = dynamic(() => import("../../../Vehicle"), { ssr: false });
+
   return [
     [
       <HeroSection key="hero" hero={config.content.hero} />,
