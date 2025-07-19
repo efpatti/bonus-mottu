@@ -7,7 +7,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { EligibilitySection } from "@/components/sections/EligibilitySection";
 import { RulesSection } from "@/components/sections/RulesSection";
 import RedirectSection from "@/components/sections/RedirectSection";
-import Vehicle from "@/components/sections/Vehicle";
+import Vehicle from "../../../Vehicle";
 
 import { useLevelStore } from "@/hooks/useLevelStore";
 
